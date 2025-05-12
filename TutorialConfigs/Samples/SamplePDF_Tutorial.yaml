@@ -29,6 +29,14 @@ SubSamples:
     nutype: 14
     oscnutype: 14
 
+  - Name: "FHC_numu_x_nue"
+    LatexName: "#nu_{#mu} #rightarrow #nu_{e}"  
+    mtuplefile: ""
+    splinefile: ""
+    nutype: 14
+    oscnutype: 12
+
+
 LikelihoodOptions:
   #False means you calculate W2 histogram only during first reweight, advisable for Barlow-Beeston
   UpdateW2: true

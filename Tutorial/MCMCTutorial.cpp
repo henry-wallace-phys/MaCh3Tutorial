@@ -10,6 +10,9 @@ int main(int argc, char *argv[]) {
   auto xsec = MaCh3CovarianceFactory<covarianceXsec>(FitManager.get(), "Xsec");
   auto osc  = MaCh3CovarianceFactory<covarianceOsc>(FitManager.get(), "Osc");
  
+  osc->setFlipDeltaM23(FitManager->raw()["General"]["Systematics"]["MassOrderFlip"].as<bool>());
+  osc->setFlipOctant(FitManager->raw()["General"]["Systematics"]["OctantFlip"].as<bool>());
+
   // Initialise samplePDF
   auto SampleConfig = FitManager->raw()["General"]["TutorialSamples"].as<std::vector<std::string>>();
   auto mySamples = MaCh3SamplePDFFactory<samplePDFTutorial>(SampleConfig, xsec.get(), osc.get());
