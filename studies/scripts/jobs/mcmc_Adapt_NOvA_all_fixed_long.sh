@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cd /nfs/scratch0/hwallace/software/MaCh3Tutorial
+source env.sh
+echo "Running MCMC with config template: /nfs/scratch0/hwallace/software/MaCh3Tutorial/studies/configs/FitterConfig_Adapt_all_fixed_NOvA.yaml"
+./install/bin/MCMCTutorial /nfs/scratch0/hwallace/software/MaCh3Tutorial/studies/configs/FitterConfig_Adapt_all_fixed_NOvA.yaml  General:OutputFile:/nfs/scratch0/hwallace/software/MaCh3Tutorial/studies/Adapt/NOvA/mcmc_Adapt_NOvA_all_fixed_long.root General:MCMC:NSteps:2000000 AdaptionOptions:Settings:OutputFileName:/nfs/scratch0/hwallace/software/MaCh3Tutorial/studies/Adapt/NOvA/mcmc_Adapt_NOvA_all_fixed_cov.root 
+./install/bin/DiagMCMC /nfs/scratch0/hwallace/software/MaCh3Tutorial/studies/Adapt/NOvA/mcmc_Adapt_NOvA_all_fixed_long.root /nfs/scratch0/hwallace/software/MaCh3Tutorial/studies/configs/FitterConfig_Adapt_all_fixed_NOvA.yaml
+
